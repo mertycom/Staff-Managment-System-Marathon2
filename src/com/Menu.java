@@ -37,10 +37,11 @@ public class Menu {
 
 
 	
-	private static List<Employee> getDatas() {
+	@SuppressWarnings("unused")
+	private static Employee getDatas() {
 		Employee emp = readObjectFromFile(EMPLOYEE_COUNTER_PATH);
 		if (emp != null) {
-			return (List<Employee>) emp;
+			return emp;
 		} else
 			return null;
 	}
