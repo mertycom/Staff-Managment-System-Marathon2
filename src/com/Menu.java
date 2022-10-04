@@ -13,9 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-import java.util.TreeMap;
 import java.util.stream.Collectors;
-
 import com.entity.Employee;
 import com.entity.FullTimeWorker;
 import com.entity.HourlyWorker;
@@ -31,11 +29,9 @@ public class Menu {
 
 	public static void main(String[] args) {
 		//employeList=getDatas();
-		listEmployeesByNumber(employeList);
+		newEmployes();
 		menuLoop();
 	}
-
-
 	
 	@SuppressWarnings("unused")
 	private static Employee getDatas() {
@@ -127,7 +123,6 @@ public class Menu {
 		System.out.println(Messages.getString("Menu.BY_NAME")); 
 		System.out.println(Messages.getString("Menu.BY_EMP_YEAR")); 
 		System.out.println("#########################################################"); 
-
 	}
 
 	public static void selectList(int choice) {
@@ -161,7 +156,6 @@ public class Menu {
 		for (Employee employee : employeList) {
 			System.out.println(employee);
 		}
-
 	}
 
 	private static void listEmployeesByNumber(List<Employee> employe) {
@@ -191,6 +185,7 @@ public class Menu {
 		workinghour.add(20);
 		workinghour.add(30);
 		workinghour.add(100);
+		
 		Employee hworker3 = new HourlyWorker("Samet", "Sametov", LocalDate.of(1989, 1, 1), null, workinghour, 50); //$NON-NLS-1$ //$NON-NLS-2$
 		workinghour.clear();
 		workinghour.add(20);
@@ -214,7 +209,7 @@ public class Menu {
 		try (ObjectOutputStream objectOut = new ObjectOutputStream(new FileOutputStream(file))) {
 			objectOut.writeObject(serObj);
 			objectOut.close();
-			System.out.println("The Object was succesfully written to a file"); //$NON-NLS-1$
+			//System.out.println("The Object was succesfully written to a file"); //$NON-NLS-1$
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
