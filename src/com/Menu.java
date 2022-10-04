@@ -31,6 +31,7 @@ public class Menu {
 
 	public static void main(String[] args) {
 		//employeList=getDatas();
+		listEmployeesByNumber(employeList);
 		menuLoop();
 	}
 
